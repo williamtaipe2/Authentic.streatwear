@@ -1,0 +1,248 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#000;
+    color:#fff;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,0.8);
+    padding:15px;
+    text-align:center;
+    z-index:1000;
+    transition:0.3s;
+}
+
+
+header h1{
+    color:#a7956f;
+    letter-spacing:2px;
+    transition:0.3s;
+}
+
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:url('polos/6.png') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color: #c40505;
+}
+
+.hero h2{
+    font-size:40px;
+    background:rgba(0,0,0,0.6);
+    padding:20px;
+    transition:0.4s;
+}
+
+.hero h2:hover{
+    transform:scale(1.1);
+    background:#a7956f;
+    color:#000;
+}
+
+/* PRODUCTOS */
+.productos{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.productos h2{
+    color:#a7956f;
+    margin-bottom:40px;
+    transition:0.3s;
+}
+
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.card{
+    background:#111;
+    padding:15px;
+    border:1px solid #a7956f;
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+/* EFECTO HOVER CARD */
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 0 20px #a7956f;
+}
+
+/* IMAGEN */
+.card img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+/* ZOOM IMAGEN */
+.card:hover img{
+    transform:scale(1.1);
+}
+
+/* PRECIO */
+.precio{
+    margin:10px 0;
+    color:#a7956f;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.card:hover .precio{
+    color:#fff;
+}
+
+/* BOTÓN */
+.btn{
+    background:#a7956f;
+    color:#000;
+    padding:10px;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:10px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+/* HOVER BOTÓN */
+.btn:hover{
+    background:#fff;
+    transform:scale(1.1);
+}
+
+/* EFECTO LUZ STREET */
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition:0.5s;
+}
+
+.card:hover::before{
+    left:100%;
+}
+
+/* WHATSAPP */
+/* BOTÓN WHATSAPP PRO */
+.wsp{
+    position:fixed;
+    bottom:20px;
+    right:25px;
+    background:#25D366;
+    color:#fff;
+    font-size:28px;
+    padding:14px;
+    border-radius:50%;
+    text-decoration:none;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 0 15px rgba(37,211,102,0.6);
+    animation:floatIn 1s ease, pulse 2s infinite;
+    transition:0.3s;
+}
+
+/* ANIMACIÓN DE ENTRADA */
+@keyframes floatIn{
+    from{
+        transform:translateY(100px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+/* EFECTO PULSO */
+@keyframes pulse{
+    0%{
+        box-shadow:0 0 0 0 rgba(37,211,102,0.7);
+    }
+    70%{
+        box-shadow:0 0 0 15px rgba(37,211,102,0);
+    }
+    100%{
+        box-shadow:0 0 0 0 rgba(37,211,102,0);
+    }
+}
+
+/* HOVER */
+.wsp:hover{
+    transform:scale(1.2) rotate(10deg);
+    box-shadow:0 0 25px #25D366;
+}
+
+/* TOOLTIP */
+.tooltip{
+    position:absolute;
+    right:70px;
+    background:#111;
+    color:#fff;
+    padding:8px 12px;
+    border-radius:5px;
+    font-size:14px;
+    opacity:0;
+    transition:0.3s;
+    white-space:nowrap;
+}
+
+/* MOSTRAR TOOLTIP */
+.wsp:hover .tooltip{
+    opacity:1;
+    right:80px;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    padding:30px;
+    text-align:center;
+}
+
+footer p{
+    margin-bottom:15px;
+    color:#a7956f;
+    font-weight:bold;
+}
+
+footer a{
+    color:#a7956f;
+    margin:0 10px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+footer a:hover{
+    color:#fff;
+    letter-spacing:2px;
+}
